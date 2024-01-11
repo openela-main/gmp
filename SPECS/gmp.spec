@@ -6,7 +6,7 @@
 Summary: A GNU arbitrary precision library
 Name: gmp
 Version: 6.2.0
-Release: 10%{?dist}
+Release: 13%{?dist}
 Epoch: 1
 URL: http://gmplib.org/
 Source0: ftp://ftp.gmplib.org/pub/gmp-%{version}/gmp-%{version}.tar.bz2
@@ -15,6 +15,11 @@ Source2: gmp.h
 Source3: gmp-mparam.h
 Patch2: gmp-6.0.0-debuginfo.patch
 Patch3: gmp-intel-cet.patch
+Patch4: cve-2021-43618.patch
+Patch5: ibm_z13_simd_part1.patch
+Patch6: ibm_z13_simd_part2.patch
+Patch7: ibm_z13_simd_part3.patch
+Patch8: ibm_z13_simd_part4.patch
 License: LGPLv3+ or GPLv2+
 BuildRequires: autoconf automake libtool
 BuildRequires: gcc
@@ -74,7 +79,7 @@ in applications.
 
 # switch the defaults to new cpus on s390x
 %ifarch s390x
-( cd mpn/s390_64; ln -s z10 s390x )
+( cd mpn/s390_64; ln -s z13 s390x )
 %endif
 
 %build
@@ -182,6 +187,19 @@ export LD_LIBRARY_PATH=`pwd`/.libs
 %{_libdir}/libgmpxx.a
 
 %changelog
+* Tue Aug 03 2023 Jakub Martisko <jamartis@redhat.com> - 1:6.2.0-13
+- Fix: previous commit removed one function from the library and thus broke the ABI
+- function gmpn_preinv_divrem_1 should now not be removed
+Related: rhbz#2044216
+
+* Tue Jul 18 2023 Jakub Martisko <jamartis@redhat.com> - 1:6.2.0-12
+- Add SIMD optimization patches for s390x (provided by the IBM)
+Resolves: rhbz#2044216
+
+* Tue Jun 06 2023 Jakub Martisko <jamartis@redhat.com> - 1:6.2.0-11
+Fix: Integer overflow and resultant buffer overflow via crafted input
+Resolves: CVE-2021-43618
+
 * Fri Aug 27 2021 Jakub Martisko <jamartis@redhat.com> - 1:6.2.0-10
 - Add the support for intel CET
 Resolves: rhbz#1977890
