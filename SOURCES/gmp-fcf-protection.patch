@@ -1,0 +1,1985 @@
+diff --git a/mpn/x86_64/addaddmul_1msb0.asm b/mpn/x86_64/addaddmul_1msb0.asm
+index 87c21b4..2bfa122 100644
+--- a/mpn/x86_64/addaddmul_1msb0.asm
++++ b/mpn/x86_64/addaddmul_1msb0.asm
+@@ -168,3 +168,4 @@ L(end):	cmp	$1, R32(n)
+ 	pop	%r12
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/addmul_2.asm b/mpn/x86_64/addmul_2.asm
+index 18307d7..2999ce5 100644
+--- a/mpn/x86_64/addmul_2.asm
++++ b/mpn/x86_64/addmul_2.asm
+@@ -182,3 +182,4 @@ L(end):	xor	R32(w1), R32(w1)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aorrlsh1_n.asm b/mpn/x86_64/aorrlsh1_n.asm
+index 6ee0872..9ebd7dc 100644
+--- a/mpn/x86_64/aorrlsh1_n.asm
++++ b/mpn/x86_64/aorrlsh1_n.asm
+@@ -168,3 +168,4 @@ ifdef(`OPERATION_rsblsh1_n',`
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aorrlshC_n.asm b/mpn/x86_64/aorrlshC_n.asm
+index 5a9fd4d..c3d55a6 100644
+--- a/mpn/x86_64/aorrlshC_n.asm
++++ b/mpn/x86_64/aorrlshC_n.asm
+@@ -158,3 +158,4 @@ ifelse(ADDSUB,add,`
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aorrlsh_n.asm b/mpn/x86_64/aorrlsh_n.asm
+index 5ca128f..7dd0bcf 100644
+--- a/mpn/x86_64/aorrlsh_n.asm
++++ b/mpn/x86_64/aorrlsh_n.asm
+@@ -174,3 +174,4 @@ L(end):	add	R32(%rbx), R32(%rbx)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aors_err1_n.asm b/mpn/x86_64/aors_err1_n.asm
+index 54d0b3f..13a6af2 100644
+--- a/mpn/x86_64/aors_err1_n.asm
++++ b/mpn/x86_64/aors_err1_n.asm
+@@ -223,3 +223,4 @@ L(end):
+ 	pop	%rbx
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aors_err2_n.asm b/mpn/x86_64/aors_err2_n.asm
+index ce5c2a4..0466f06 100644
+--- a/mpn/x86_64/aors_err2_n.asm
++++ b/mpn/x86_64/aors_err2_n.asm
+@@ -170,3 +170,4 @@ L(end):
+ 	pop	%rbx
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aors_err3_n.asm b/mpn/x86_64/aors_err3_n.asm
+index bb6d0c5..cc5461f 100644
+--- a/mpn/x86_64/aors_err3_n.asm
++++ b/mpn/x86_64/aors_err3_n.asm
+@@ -154,3 +154,4 @@ L(end):
+ 	pop	%rbx
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aors_n.asm b/mpn/x86_64/aors_n.asm
+index 8941f7a..361e04d 100644
+--- a/mpn/x86_64/aors_n.asm
++++ b/mpn/x86_64/aors_n.asm
+@@ -167,3 +167,4 @@ L(end):	lea	32(up), up
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/aorsmul_1.asm b/mpn/x86_64/aorsmul_1.asm
+index e3fc005..25d0c13 100644
+--- a/mpn/x86_64/aorsmul_1.asm
++++ b/mpn/x86_64/aorsmul_1.asm
+@@ -178,3 +178,4 @@ IFDOS(``pop	%rdi		'')
+ IFDOS(``pop	%rsi		'')
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/addmul_2.asm b/mpn/x86_64/atom/addmul_2.asm
+index c1dcdc4..07ae7b8 100644
+--- a/mpn/x86_64/atom/addmul_2.asm
++++ b/mpn/x86_64/atom/addmul_2.asm
+@@ -184,3 +184,4 @@ L(end):	mul	v1
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/aorrlsh1_n.asm b/mpn/x86_64/atom/aorrlsh1_n.asm
+index f44de19..f9d7bac 100644
+--- a/mpn/x86_64/atom/aorrlsh1_n.asm
++++ b/mpn/x86_64/atom/aorrlsh1_n.asm
+@@ -236,3 +236,4 @@ IFDOS(`	mov	56(%rsp), %r8	')
+ 	sbb	R32(%rbp), R32(%rbp)	C save acy
+ 	jmp	L(ent)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/aorrlsh2_n.asm b/mpn/x86_64/atom/aorrlsh2_n.asm
+index 02fb29d..5ea55b4 100644
+--- a/mpn/x86_64/atom/aorrlsh2_n.asm
++++ b/mpn/x86_64/atom/aorrlsh2_n.asm
+@@ -189,3 +189,4 @@ ifdef(`OPERATION_rsblsh2_n',`
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/aorsmul_1.asm b/mpn/x86_64/atom/aorsmul_1.asm
+index e953153..6a12f96 100644
+--- a/mpn/x86_64/atom/aorsmul_1.asm
++++ b/mpn/x86_64/atom/aorsmul_1.asm
+@@ -188,3 +188,4 @@ L(cj1):	ADDSUB	%rax, (rp,n,8)
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/atom/lshift.asm b/mpn/x86_64/atom/lshift.asm
+index 1b37d5d..15786cb 100644
+--- a/mpn/x86_64/atom/lshift.asm
++++ b/mpn/x86_64/atom/lshift.asm
+@@ -121,3 +121,4 @@ L(end):	shl	R8(%rcx), %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/lshiftc.asm b/mpn/x86_64/atom/lshiftc.asm
+index 7385f8f..3171d3c 100644
+--- a/mpn/x86_64/atom/lshiftc.asm
++++ b/mpn/x86_64/atom/lshiftc.asm
+@@ -125,3 +125,4 @@ L(end):	shl	R8(%rcx), %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/mul_1.asm b/mpn/x86_64/atom/mul_1.asm
+index d76a3d3..304c208 100644
+--- a/mpn/x86_64/atom/mul_1.asm
++++ b/mpn/x86_64/atom/mul_1.asm
+@@ -141,3 +141,4 @@ IFDOS(`	mov	56(%rsp), %r8	')
+ 	jmp	L(com)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/atom/mul_2.asm b/mpn/x86_64/atom/mul_2.asm
+index f3fc3af..c7b78a7 100644
+--- a/mpn/x86_64/atom/mul_2.asm
++++ b/mpn/x86_64/atom/mul_2.asm
+@@ -184,3 +184,4 @@ L(end):	mul	v1
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/redc_1.asm b/mpn/x86_64/atom/redc_1.asm
+index 62b9a84..eeb09d3 100644
+--- a/mpn/x86_64/atom/redc_1.asm
++++ b/mpn/x86_64/atom/redc_1.asm
+@@ -577,3 +577,4 @@ L(n4):	mov	-32(mp), %rax
+ 	jmp	L(cj)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/atom/rsh1aors_n.asm b/mpn/x86_64/atom/rsh1aors_n.asm
+index 6f5f638..a589b89 100644
+--- a/mpn/x86_64/atom/rsh1aors_n.asm
++++ b/mpn/x86_64/atom/rsh1aors_n.asm
+@@ -285,3 +285,4 @@ L(cj1):	pop	%r15
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/rshift.asm b/mpn/x86_64/atom/rshift.asm
+index 29c027d..c8b78bf 100644
+--- a/mpn/x86_64/atom/rshift.asm
++++ b/mpn/x86_64/atom/rshift.asm
+@@ -119,3 +119,4 @@ L(end):	shr	R8(cnt), %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/atom/sublsh1_n.asm b/mpn/x86_64/atom/sublsh1_n.asm
+index 1306acd..574b25b 100644
+--- a/mpn/x86_64/atom/sublsh1_n.asm
++++ b/mpn/x86_64/atom/sublsh1_n.asm
+@@ -240,3 +240,4 @@ IFDOS(`	mov	56(%rsp), %r8	')
+ 	sbb	R32(%rbp), R32(%rbp)	C save acy
+ 	jmp	L(ent)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bd1/aorsmul_1.asm b/mpn/x86_64/bd1/aorsmul_1.asm
+index 96fec9f..ce76154 100644
+--- a/mpn/x86_64/bd1/aorsmul_1.asm
++++ b/mpn/x86_64/bd1/aorsmul_1.asm
+@@ -179,3 +179,4 @@ IFDOS(``pop	%rsi		'')
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/bd1/mul_1.asm b/mpn/x86_64/bd1/mul_1.asm
+index e59667c..308f336 100644
+--- a/mpn/x86_64/bd1/mul_1.asm
++++ b/mpn/x86_64/bd1/mul_1.asm
+@@ -182,3 +182,4 @@ IFDOS(``pop	%rsi		'')
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/bd1/mul_2.asm b/mpn/x86_64/bd1/mul_2.asm
+index 4ed5f30..f40cf47 100644
+--- a/mpn/x86_64/bd1/mul_2.asm
++++ b/mpn/x86_64/bd1/mul_2.asm
+@@ -190,3 +190,4 @@ L(end):	mov	-8(up,n,8), %rax
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bd1/mul_basecase.asm b/mpn/x86_64/bd1/mul_basecase.asm
+index e47ba58..6d61cbc 100644
+--- a/mpn/x86_64/bd1/mul_basecase.asm
++++ b/mpn/x86_64/bd1/mul_basecase.asm
+@@ -414,3 +414,4 @@ L(ret2):pop	%rbp
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bdiv_dbm1c.asm b/mpn/x86_64/bdiv_dbm1c.asm
+index a53bd52..f9c4aa0 100644
+--- a/mpn/x86_64/bdiv_dbm1c.asm
++++ b/mpn/x86_64/bdiv_dbm1c.asm
+@@ -104,3 +104,4 @@ L(lo1):	sub	%rax, %r8
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bdiv_q_1.asm b/mpn/x86_64/bdiv_q_1.asm
+index 02eacbe..7bfa66d 100644
+--- a/mpn/x86_64/bdiv_q_1.asm
++++ b/mpn/x86_64/bdiv_q_1.asm
+@@ -165,3 +165,4 @@ L(one):	shr	R8(%rcx), %rax
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/aors_n.asm b/mpn/x86_64/bobcat/aors_n.asm
+index 22287b8..1df1a08 100644
+--- a/mpn/x86_64/bobcat/aors_n.asm
++++ b/mpn/x86_64/bobcat/aors_n.asm
+@@ -148,3 +148,4 @@ PROLOGUE(func_nc)
+ IFDOS(`	mov	56(%rsp), %r8	')
+ 	jmp	L(ent)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/aorsmul_1.asm b/mpn/x86_64/bobcat/aorsmul_1.asm
+index 415a17c..79d81f4 100644
+--- a/mpn/x86_64/bobcat/aorsmul_1.asm
++++ b/mpn/x86_64/bobcat/aorsmul_1.asm
+@@ -181,3 +181,4 @@ IFDOS(`	pop	%rdi		')
+ IFDOS(`	pop	%rsi		')
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/copyd.asm b/mpn/x86_64/bobcat/copyd.asm
+index 877714e..2f781a3 100644
+--- a/mpn/x86_64/bobcat/copyd.asm
++++ b/mpn/x86_64/bobcat/copyd.asm
+@@ -89,3 +89,4 @@ L(end):	cmp	$-4, R32(n)
+ L(ret):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/copyi.asm b/mpn/x86_64/bobcat/copyi.asm
+index ee0f578..ff249bc 100644
+--- a/mpn/x86_64/bobcat/copyi.asm
++++ b/mpn/x86_64/bobcat/copyi.asm
+@@ -92,3 +92,4 @@ L(end):	cmp	$4, R32(n)
+ L(ret):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/mul_1.asm b/mpn/x86_64/bobcat/mul_1.asm
+index ab428a8..b4f401b 100644
+--- a/mpn/x86_64/bobcat/mul_1.asm
++++ b/mpn/x86_64/bobcat/mul_1.asm
+@@ -185,3 +185,4 @@ IFDOS(`	pop	%rdi		')
+ IFDOS(`	pop	%rsi		')
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/mul_basecase.asm b/mpn/x86_64/bobcat/mul_basecase.asm
+index e7d46bf..14c7b13 100644
+--- a/mpn/x86_64/bobcat/mul_basecase.asm
++++ b/mpn/x86_64/bobcat/mul_basecase.asm
+@@ -484,3 +484,4 @@ L(ret):	pop	%r13
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/redc_1.asm b/mpn/x86_64/bobcat/redc_1.asm
+index d55b1e5..d686cfb 100644
+--- a/mpn/x86_64/bobcat/redc_1.asm
++++ b/mpn/x86_64/bobcat/redc_1.asm
+@@ -505,3 +505,4 @@ L(n3):	mov	-24(mp), %rax
+ 	jmp	L(ret)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/bobcat/sqr_basecase.asm b/mpn/x86_64/bobcat/sqr_basecase.asm
+index 0e417a1..5693c46 100644
+--- a/mpn/x86_64/bobcat/sqr_basecase.asm
++++ b/mpn/x86_64/bobcat/sqr_basecase.asm
+@@ -563,3 +563,4 @@ L(esd):	add	%rbx, w0
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/cnd_aors_n.asm b/mpn/x86_64/cnd_aors_n.asm
+index 13a2ab3..35f30e7 100644
+--- a/mpn/x86_64/cnd_aors_n.asm
++++ b/mpn/x86_64/cnd_aors_n.asm
+@@ -181,3 +181,4 @@ L(end):	neg	R32(%rax)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/com.asm b/mpn/x86_64/com.asm
+index 006acaf..56b0747 100644
+--- a/mpn/x86_64/com.asm
++++ b/mpn/x86_64/com.asm
+@@ -93,3 +93,4 @@ L(e10):	movq	24(up,n,8), %r9
+ L(ret):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/copyd.asm b/mpn/x86_64/copyd.asm
+index a5e6e59..020e287 100644
+--- a/mpn/x86_64/copyd.asm
++++ b/mpn/x86_64/copyd.asm
+@@ -91,3 +91,4 @@ L(end):	shr	R32(n)
+ 	mov	%r9, -16(rp)
+ 1:	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/copyi.asm b/mpn/x86_64/copyi.asm
+index bafce7a..1a4fb6d 100644
+--- a/mpn/x86_64/copyi.asm
++++ b/mpn/x86_64/copyi.asm
+@@ -90,3 +90,4 @@ L(end):	shr	R32(n)
+ 	mov	%r9, 16(rp)
+ 1:	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/aors_err1_n.asm b/mpn/x86_64/core2/aors_err1_n.asm
+index 3f875ae..5162272 100644
+--- a/mpn/x86_64/core2/aors_err1_n.asm
++++ b/mpn/x86_64/core2/aors_err1_n.asm
+@@ -223,3 +223,4 @@ L(end):
+ 	pop	%rbx
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/aors_n.asm b/mpn/x86_64/core2/aors_n.asm
+index 74a1bce..19078d8 100644
+--- a/mpn/x86_64/core2/aors_n.asm
++++ b/mpn/x86_64/core2/aors_n.asm
+@@ -139,3 +139,4 @@ IFDOS(`	mov	56(%rsp), %r8	')
+ 	jmp	L(start)
+ EPILOGUE()
+ 
++CF_PROT
+diff --git a/mpn/x86_64/core2/aorsmul_1.asm b/mpn/x86_64/core2/aorsmul_1.asm
+index 6b313dd..392f4de 100644
+--- a/mpn/x86_64/core2/aorsmul_1.asm
++++ b/mpn/x86_64/core2/aorsmul_1.asm
+@@ -176,3 +176,4 @@ L(n1):	mov	8(rp), %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/divrem_1.asm b/mpn/x86_64/core2/divrem_1.asm
+index 1b3f139..0a67dc3 100644
+--- a/mpn/x86_64/core2/divrem_1.asm
++++ b/mpn/x86_64/core2/divrem_1.asm
+@@ -241,3 +241,4 @@ L(ret):	pop	%rbx
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/gcd_1.asm b/mpn/x86_64/core2/gcd_1.asm
+index bdb940c..452b763 100644
+--- a/mpn/x86_64/core2/gcd_1.asm
++++ b/mpn/x86_64/core2/gcd_1.asm
+@@ -144,3 +144,4 @@ L(end):	pop	%rcx
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/lshift.asm b/mpn/x86_64/core2/lshift.asm
+index 8ccafec..00b39b8 100644
+--- a/mpn/x86_64/core2/lshift.asm
++++ b/mpn/x86_64/core2/lshift.asm
+@@ -147,3 +147,4 @@ L(end):	shld	R8(cnt), %r8, %r11
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/lshiftc.asm b/mpn/x86_64/core2/lshiftc.asm
+index 65c7b2f..4d3acfe 100644
+--- a/mpn/x86_64/core2/lshiftc.asm
++++ b/mpn/x86_64/core2/lshiftc.asm
+@@ -157,3 +157,4 @@ L(end):	shld	R8(cnt), %r8, %r11
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/mul_basecase.asm b/mpn/x86_64/core2/mul_basecase.asm
+index d16be85..04cd4c2 100644
+--- a/mpn/x86_64/core2/mul_basecase.asm
++++ b/mpn/x86_64/core2/mul_basecase.asm
+@@ -973,3 +973,4 @@ L(lo3):	mul	v0
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/mullo_basecase.asm b/mpn/x86_64/core2/mullo_basecase.asm
+index 0f03d86..efed03d 100644
+--- a/mpn/x86_64/core2/mullo_basecase.asm
++++ b/mpn/x86_64/core2/mullo_basecase.asm
+@@ -425,3 +425,4 @@ L(n3):	mov	(vp_param), %r9
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/redc_1.asm b/mpn/x86_64/core2/redc_1.asm
+index 8c296fd..d98f56f 100644
+--- a/mpn/x86_64/core2/redc_1.asm
++++ b/mpn/x86_64/core2/redc_1.asm
+@@ -428,3 +428,4 @@ L(n4):	mov	-32(mp), %rax
+ 	jmp	L(add_n)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/core2/rsh1aors_n.asm b/mpn/x86_64/core2/rsh1aors_n.asm
+index 27eed37..579fec6 100644
+--- a/mpn/x86_64/core2/rsh1aors_n.asm
++++ b/mpn/x86_64/core2/rsh1aors_n.asm
+@@ -167,3 +167,4 @@ L(end):	shrd	$1, %rbx, %rbp
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/rshift.asm b/mpn/x86_64/core2/rshift.asm
+index ab32ec8..97f4429 100644
+--- a/mpn/x86_64/core2/rshift.asm
++++ b/mpn/x86_64/core2/rshift.asm
+@@ -145,3 +145,4 @@ L(end):	shrd	R8(cnt), %r8, %r11
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/sqr_basecase.asm b/mpn/x86_64/core2/sqr_basecase.asm
+index a112c1b..0ee6ca3 100644
+--- a/mpn/x86_64/core2/sqr_basecase.asm
++++ b/mpn/x86_64/core2/sqr_basecase.asm
+@@ -982,3 +982,4 @@ L(n3):	mov	%rax, %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/core2/sublshC_n.asm b/mpn/x86_64/core2/sublshC_n.asm
+index 5acc46b..7a48dfb 100644
+--- a/mpn/x86_64/core2/sublshC_n.asm
++++ b/mpn/x86_64/core2/sublshC_n.asm
+@@ -156,3 +156,4 @@ L(end):	shr	$RSH, %r11
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreibwl/addmul_1.asm b/mpn/x86_64/coreibwl/addmul_1.asm
+index aaa58e7..4fb79f9 100644
+--- a/mpn/x86_64/coreibwl/addmul_1.asm
++++ b/mpn/x86_64/coreibwl/addmul_1.asm
+@@ -107,33 +107,39 @@ L(tab):	JMPENT(	L(f0), L(tab))
+ 	JMPENT(	L(f7), L(tab))
+ 	TEXT
+ 
+-L(f0):	mulx(	(up), %r10, %r8)
++L(f0):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	-8(up), up
+ 	lea	-8(rp), rp
+ 	lea	-1(n), n
+ 	jmp	L(b0)
+ 
+-L(f3):	mulx(	(up), %r9, %rax)
++L(f3):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	lea	16(up), up
+ 	lea	-48(rp), rp
+ 	jmp	L(b3)
+ 
+-L(f4):	mulx(	(up), %r10, %r8)
++L(f4):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	24(up), up
+ 	lea	-40(rp), rp
+ 	jmp	L(b4)
+ 
+-L(f5):	mulx(	(up), %r9, %rax)
++L(f5):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	lea	32(up), up
+ 	lea	-32(rp), rp
+ 	jmp	L(b5)
+ 
+-L(f6):	mulx(	(up), %r10, %r8)
++L(f6):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	40(up), up
+ 	lea	-24(rp), rp
+ 	jmp	L(b6)
+ 
+-L(f1):	mulx(	(up), %r9, %rax)
++L(f1):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	jrcxz	L(1)
+ 	jmp	L(b1)
+ L(1):	add	(rp), %r9
+@@ -151,7 +157,8 @@ ifdef(`PIC',
+ `	nop;nop;nop;nop',
+ `	nop;nop;nop;nop;nop;nop;nop;nop;nop;nop;nop')
+ 
+-L(f2):	mulx(	(up), %r10, %r8)
++L(f2):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	8(up), up
+ 	lea	8(rp), rp
+ 	mulx(	(up), %r9, %rax)
+@@ -195,9 +202,11 @@ L(b3):	adox(	48,(rp), %r9)
+ 	mulx(	(up), %r9, %rax)
+ 	jmp	L(top)
+ 
+-L(f7):	mulx(	(up), %r9, %rax)
++L(f7):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	lea	-16(up), up
+ 	lea	-16(rp), rp
+ 	jmp	L(b7)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/coreibwl/mul_1.asm b/mpn/x86_64/coreibwl/mul_1.asm
+index a271e6c..4fe4822 100644
+--- a/mpn/x86_64/coreibwl/mul_1.asm
++++ b/mpn/x86_64/coreibwl/mul_1.asm
+@@ -106,48 +106,56 @@ L(tab):	JMPENT(	L(f0), L(tab))
+ 	JMPENT(	L(f7), L(tab))
+ 	TEXT
+ 
+-L(f0):	mulx(	(up), %r10, %r8)
++L(f0):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	56(up), up
+ 	lea	-8(rp), rp
+ 	jmp	L(b0)
+ 
+-L(f3):	mulx(	(up), %r9, %rax)
++L(f3):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	lea	16(up), up
+ 	lea	16(rp), rp
+ 	inc	n
+ 	jmp	L(b3)
+ 
+-L(f4):	mulx(	(up), %r10, %r8)
++L(f4):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	24(up), up
+ 	lea	24(rp), rp
+ 	inc	n
+ 	jmp	L(b4)
+ 
+-L(f5):	mulx(	(up), %r9, %rax)
++L(f5):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	lea	32(up), up
+ 	lea	32(rp), rp
+ 	inc	n
+ 	jmp	L(b5)
+ 
+-L(f6):	mulx(	(up), %r10, %r8)
++L(f6):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	40(up), up
+ 	lea	40(rp), rp
+ 	inc	n
+ 	jmp	L(b6)
+ 
+-L(f7):	mulx(	(up), %r9, %rax)
++L(f7):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	lea	48(up), up
+ 	lea	48(rp), rp
+ 	inc	n
+ 	jmp	L(b7)
+ 
+-L(f1):	mulx(	(up), %r9, %rax)
++L(f1):	CFPROT_ENDBR
++	mulx(	(up), %r9, %rax)
+ 	test	n, n
+ 	jnz	L(b1)
+ L(1):	mov	%r9, (rp)
+ 	ret
+ 
+-L(f2):	mulx(	(up), %r10, %r8)
++L(f2):	CFPROT_ENDBR
++	mulx(	(up), %r10, %r8)
+ 	lea	8(up), up
+ 	lea	8(rp), rp
+ 	mulx(	(up), %r9, %rax)
+@@ -191,3 +199,4 @@ L(end):	mov	%r10, -8(rp)
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/coreibwl/mul_basecase.asm b/mpn/x86_64/coreibwl/mul_basecase.asm
+index 50f3ce5..74cd67c 100644
+--- a/mpn/x86_64/coreibwl/mul_basecase.asm
++++ b/mpn/x86_64/coreibwl/mul_basecase.asm
+@@ -155,45 +155,53 @@ ifdef(`PIC',
+ 	jmp	*(%r10,%rax,8)
+ ')
+ 
+-L(mf0):	mulx(	(up), w2, w3)
++L(mf0):	CFPROT_ENDBR
++	mulx(	(up), w2, w3)
+ 	lea	56(up), up
+ 	lea	-8(rp), rp
+ 	jmp	L(mb0)
+ 
+-L(mf3):	mulx(	(up), w0, w1)
++L(mf3):	CFPROT_ENDBR
++	mulx(	(up), w0, w1)
+ 	lea	16(up), up
+ 	lea	16(rp), rp
+ 	inc	n
+ 	jmp	L(mb3)
+ 
+-L(mf4):	mulx(	(up), w2, w3)
++L(mf4):	CFPROT_ENDBR
++	mulx(	(up), w2, w3)
+ 	lea	24(up), up
+ 	lea	24(rp), rp
+ 	inc	n
+ 	jmp	L(mb4)
+ 
+-L(mf5):	mulx(	(up), w0, w1)
++L(mf5):	CFPROT_ENDBR
++	mulx(	(up), w0, w1)
+ 	lea	32(up), up
+ 	lea	32(rp), rp
+ 	inc	n
+ 	jmp	L(mb5)
+ 
+-L(mf6):	mulx(	(up), w2, w3)
++L(mf6):	CFPROT_ENDBR
++	mulx(	(up), w2, w3)
+ 	lea	40(up), up
+ 	lea	40(rp), rp
+ 	inc	n
+ 	jmp	L(mb6)
+ 
+-L(mf7):	mulx(	(up), w0, w1)
++L(mf7):	CFPROT_ENDBR
++	mulx(	(up), w0, w1)
+ 	lea	48(up), up
+ 	lea	48(rp), rp
+ 	inc	n
+ 	jmp	L(mb7)
+ 
+-L(mf1):	mulx(	(up), w0, w1)
++L(mf1):	CFPROT_ENDBR
++	mulx(	(up), w0, w1)
+ 	jmp	L(mb1)
+ 
+-L(mf2):	mulx(	(up), w2, w3)
++L(mf2):	CFPROT_ENDBR
++	mulx(	(up), w2, w3)
+ 	lea	8(up), up
+ 	lea	8(rp), rp
+ 	mulx(	(up), w0, w1)
+@@ -254,32 +262,39 @@ L(outer):
+ 	lea	8(vp), vp
+ 	jmp	*jaddr
+ 
+-L(f0):	mulx(	8,(up), w2, w3)
++L(f0):	CFPROT_ENDBR
++	mulx(	8,(up), w2, w3)
+ 	lea	8(rp,unneg,8), rp
+ 	lea	-1(n), n
+ 	jmp	L(b0)
+ 
+-L(f3):	mulx(	-16,(up), w0, w1)
++L(f3):	CFPROT_ENDBR
++	mulx(	-16,(up), w0, w1)
+ 	lea	-56(rp,unneg,8), rp
+ 	jmp	L(b3)
+ 
+-L(f4):	mulx(	-24,(up), w2, w3)
++L(f4):	CFPROT_ENDBR
++	mulx(	-24,(up), w2, w3)
+ 	lea	-56(rp,unneg,8), rp
+ 	jmp	L(b4)
+ 
+-L(f5):	mulx(	-32,(up), w0, w1)
++L(f5):	CFPROT_ENDBR
++	mulx(	-32,(up), w0, w1)
+ 	lea	-56(rp,unneg,8), rp
+ 	jmp	L(b5)
+ 
+-L(f6):	mulx(	-40,(up), w2, w3)
++L(f6):	CFPROT_ENDBR
++	mulx(	-40,(up), w2, w3)
+ 	lea	-56(rp,unneg,8), rp
+ 	jmp	L(b6)
+ 
+-L(f7):	mulx(	16,(up), w0, w1)
++L(f7):	CFPROT_ENDBR
++	mulx(	16,(up), w0, w1)
+ 	lea	8(rp,unneg,8), rp
+ 	jmp	L(b7)
+ 
+-L(f1):	mulx(	(up), w0, w1)
++L(f1):	CFPROT_ENDBR
++	mulx(	(up), w0, w1)
+ 	lea	8(rp,unneg,8), rp
+ 	jmp	L(b1)
+ 
+@@ -300,7 +315,7 @@ L(done):
+ 	FUNC_EXIT()
+ 	ret
+ 
+-L(f2):
++L(f2):	CFPROT_ENDBR
+ 	mulx(	-8,(up), w2, w3)
+ 	lea	8(rp,unneg,8), rp
+ 	mulx(	(up), w0, w1)
+@@ -365,3 +380,4 @@ L(atab):JMPENT(	L(f0), L(atab))
+ 	JMPENT(	L(f7), L(atab))
+ 	TEXT
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreibwl/sqr_basecase.asm b/mpn/x86_64/coreibwl/sqr_basecase.asm
+index 447ba00..64e8298 100644
+--- a/mpn/x86_64/coreibwl/sqr_basecase.asm
++++ b/mpn/x86_64/coreibwl/sqr_basecase.asm
+@@ -184,42 +184,50 @@ ifdef(`PIC',
+ 	jmp	*(%r10,%rax,8)
+ ')
+ 
+-L(mf0):	mulx(	8,(up), w2, w3)
++L(mf0):	CFPROT_ENDBR
++	mulx(	8,(up), w2, w3)
+ 	lea	64(up), up
+ C	lea	(rp), rp
+ 	jmp	L(mb0)
+ 
+-L(mf3):	mulx(	8,(up), w0, w1)
++L(mf3):	CFPROT_ENDBR
++	mulx(	8,(up), w0, w1)
+ 	lea	24(up), up
+ 	lea	24(rp), rp
+ 	jmp	L(mb3)
+ 
+-L(mf4):	mulx(	8,(up), w2, w3)
++L(mf4):	CFPROT_ENDBR
++	mulx(	8,(up), w2, w3)
+ 	lea	32(up), up
+ 	lea	32(rp), rp
+ 	jmp	L(mb4)
+ 
+-L(mf5):	mulx(	8,(up), w0, w1)
++L(mf5):	CFPROT_ENDBR
++	mulx(	8,(up), w0, w1)
+ 	lea	40(up), up
+ 	lea	40(rp), rp
+ 	jmp	L(mb5)
+ 
+-L(mf6):	mulx(	8,(up), w2, w3)
++L(mf6):	CFPROT_ENDBR
++	mulx(	8,(up), w2, w3)
+ 	lea	48(up), up
+ 	lea	48(rp), rp
+ 	jmp	L(mb6)
+ 
+-L(mf7):	mulx(	8,(up), w0, w1)
++L(mf7):	CFPROT_ENDBR
++	mulx(	8,(up), w0, w1)
+ 	lea	56(up), up
+ 	lea	56(rp), rp
+ 	jmp	L(mb7)
+ 
+-L(mf1):	mulx(	8,(up), w0, w1)
++L(mf1):	CFPROT_ENDBR
++	mulx(	8,(up), w0, w1)
+ 	lea	8(up), up
+ 	lea	8(rp), rp
+ 	jmp	L(mb1)
+ 
+-L(mf2):	mulx(	8,(up), w2, w3)
++L(mf2):	CFPROT_ENDBR
++	mulx(	8,(up), w2, w3)
+ 	lea	16(up), up
+ 	lea	16(rp), rp
+ 	dec	R32(n)
+@@ -275,7 +283,8 @@ L(ed0):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f7):	lea	-64(up,un_save,8), up
++L(f7):	CFPROT_ENDBR
++	lea	-64(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	mov	8(up), u0
+ 	mulx(	16,(up), w0, w1)
+@@ -326,7 +335,8 @@ L(ed1):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f0):	lea	-64(up,un_save,8), up
++L(f0):	CFPROT_ENDBR
++	lea	-64(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	mov	(up), u0
+ 	mulx(	8,(up), w2, w3)
+@@ -377,7 +387,8 @@ L(ed2):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f1):	lea	(up,un_save,8), up
++L(f1):	CFPROT_ENDBR
++	lea	(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	lea	8(un_save), un_save
+ 	mov	-8(up), u0
+@@ -429,7 +440,8 @@ L(ed3):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f2):	lea	(up,un_save,8), up
++L(f2):	CFPROT_ENDBR
++	lea	(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	jz	L(corner2)
+ 	mov	-16(up), u0
+@@ -482,7 +494,8 @@ L(ed4):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f3):	lea	(up,un_save,8), up
++L(f3):	CFPROT_ENDBR
++	lea	(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	jz	L(corner3)
+ 	mov	-24(up), u0
+@@ -534,7 +547,8 @@ L(ed5):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f4):	lea	(up,un_save,8), up
++L(f4):	CFPROT_ENDBR
++	lea	(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	mov	-32(up), u0
+ 	mulx(	-24,(up), w2, w3)
+@@ -585,7 +599,8 @@ L(ed6):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f5):	lea	(up,un_save,8), up
++L(f5):	CFPROT_ENDBR
++	lea	(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	mov	-40(up), u0
+ 	mulx(	-32,(up), w0, w1)
+@@ -636,7 +651,8 @@ L(ed7):	adox(	(rp), w0)
+ 	mov	w0, (rp)
+ 	adc	%rcx, w1		C relies on rcx = 0
+ 	mov	w1, 8(rp)
+-L(f6):	lea	(up,un_save,8), up
++L(f6):	CFPROT_ENDBR
++	lea	(up,un_save,8), up
+ 	or	R32(un_save), R32(n)
+ 	mov	-48(up), u0
+ 	mulx(	-40,(up), w2, w3)
+@@ -838,3 +854,4 @@ L(atab):JMPENT(	L(f6), L(atab))
+ 	JMPENT(	L(f5), L(atab))
+ 	TEXT
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/addmul_2.asm b/mpn/x86_64/coreihwl/addmul_2.asm
+index 54aebc8..2a5f996 100644
+--- a/mpn/x86_64/coreihwl/addmul_2.asm
++++ b/mpn/x86_64/coreihwl/addmul_2.asm
+@@ -236,3 +236,4 @@ L(end):	mulx(	v0, %rax, w3)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/aorsmul_1.asm b/mpn/x86_64/coreihwl/aorsmul_1.asm
+index fd5a26d..8c03b17 100644
+--- a/mpn/x86_64/coreihwl/aorsmul_1.asm
++++ b/mpn/x86_64/coreihwl/aorsmul_1.asm
+@@ -196,3 +196,4 @@ L(ret):	pop	%r13
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/mul_1.asm b/mpn/x86_64/coreihwl/mul_1.asm
+index 1e3c338..b6463f9 100644
+--- a/mpn/x86_64/coreihwl/mul_1.asm
++++ b/mpn/x86_64/coreihwl/mul_1.asm
+@@ -153,3 +153,4 @@ L(cj1):	mov	%rbx, 24(rp)
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/mul_2.asm b/mpn/x86_64/coreihwl/mul_2.asm
+index 5bdb1aa..21defe9 100644
+--- a/mpn/x86_64/coreihwl/mul_2.asm
++++ b/mpn/x86_64/coreihwl/mul_2.asm
+@@ -171,3 +171,4 @@ L(end):	mulx(	v1, %rdx, %rax)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/mul_basecase.asm b/mpn/x86_64/coreihwl/mul_basecase.asm
+index b2656c8..e4a8381 100644
+--- a/mpn/x86_64/coreihwl/mul_basecase.asm
++++ b/mpn/x86_64/coreihwl/mul_basecase.asm
+@@ -439,3 +439,4 @@ L(ret2):pop	%rbp
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/mullo_basecase.asm b/mpn/x86_64/coreihwl/mullo_basecase.asm
+index 9986e8b..6756802 100644
+--- a/mpn/x86_64/coreihwl/mullo_basecase.asm
++++ b/mpn/x86_64/coreihwl/mullo_basecase.asm
+@@ -424,3 +424,4 @@ L(n3):	mov	(vp), %r9
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/redc_1.asm b/mpn/x86_64/coreihwl/redc_1.asm
+index b1d6c0a..b8b4a9e 100644
+--- a/mpn/x86_64/coreihwl/redc_1.asm
++++ b/mpn/x86_64/coreihwl/redc_1.asm
+@@ -435,3 +435,4 @@ L(ret):	pop	%r15
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreihwl/sqr_basecase.asm b/mpn/x86_64/coreihwl/sqr_basecase.asm
+index 641cdf3..8e83470 100644
+--- a/mpn/x86_64/coreihwl/sqr_basecase.asm
++++ b/mpn/x86_64/coreihwl/sqr_basecase.asm
+@@ -504,3 +504,4 @@ L(dend):adc	%rbx, %rdx
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreinhm/aorrlsh_n.asm b/mpn/x86_64/coreinhm/aorrlsh_n.asm
+index eed64e7..b1a4610 100644
+--- a/mpn/x86_64/coreinhm/aorrlsh_n.asm
++++ b/mpn/x86_64/coreinhm/aorrlsh_n.asm
+@@ -198,3 +198,4 @@ IFDOS(`	mov	64(%rsp), %r9	')	C cy
+ 	sbb	R32(%rbx), R32(%rbx)	C initialise CF save register
+ 	jmp	L(ent)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreinhm/aorsmul_1.asm b/mpn/x86_64/coreinhm/aorsmul_1.asm
+index b768905..e2d96a8 100644
+--- a/mpn/x86_64/coreinhm/aorsmul_1.asm
++++ b/mpn/x86_64/coreinhm/aorsmul_1.asm
+@@ -185,3 +185,4 @@ L(end):	mul	v0
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/coreinhm/redc_1.asm b/mpn/x86_64/coreinhm/redc_1.asm
+index fc71c1b..782da6b 100644
+--- a/mpn/x86_64/coreinhm/redc_1.asm
++++ b/mpn/x86_64/coreinhm/redc_1.asm
+@@ -547,3 +547,4 @@ L(n3):	mov	-24(mp), %rax
+ 	jmp	L(ret)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/addmul_2.asm b/mpn/x86_64/coreisbr/addmul_2.asm
+index 21f0bf4..e6ffe3e 100644
+--- a/mpn/x86_64/coreisbr/addmul_2.asm
++++ b/mpn/x86_64/coreisbr/addmul_2.asm
+@@ -222,3 +222,4 @@ L(end):	mul	v1
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/aorrlshC_n.asm b/mpn/x86_64/coreisbr/aorrlshC_n.asm
+index 23ace41..75a9b8c 100644
+--- a/mpn/x86_64/coreisbr/aorrlshC_n.asm
++++ b/mpn/x86_64/coreisbr/aorrlshC_n.asm
+@@ -171,3 +171,4 @@ L(end):	shr	$RSH, %rbp
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/aorrlsh_n.asm b/mpn/x86_64/coreisbr/aorrlsh_n.asm
+index db8ee68..611dcb2 100644
+--- a/mpn/x86_64/coreisbr/aorrlsh_n.asm
++++ b/mpn/x86_64/coreisbr/aorrlsh_n.asm
+@@ -213,3 +213,4 @@ IFDOS(`	mov	64(%rsp), %r9	')	C cy
+ 	sbb	R32(%rbx), R32(%rbx)	C initialise CF save register
+ 	jmp	L(ent)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/aors_n.asm b/mpn/x86_64/coreisbr/aors_n.asm
+index 01abf78..07fef16 100644
+--- a/mpn/x86_64/coreisbr/aors_n.asm
++++ b/mpn/x86_64/coreisbr/aors_n.asm
+@@ -196,3 +196,4 @@ PROLOGUE(func_nc)
+ IFDOS(`	mov	56(%rsp), %r8	')
+ 	jmp	L(ent)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/aorsmul_1.asm b/mpn/x86_64/coreisbr/aorsmul_1.asm
+index 9f01d9c..41b8016 100644
+--- a/mpn/x86_64/coreisbr/aorsmul_1.asm
++++ b/mpn/x86_64/coreisbr/aorsmul_1.asm
+@@ -207,3 +207,4 @@ IFDOS(``pop	%rsi		'')
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/mul_1.asm b/mpn/x86_64/coreisbr/mul_1.asm
+index ded7d89..a30f00b 100644
+--- a/mpn/x86_64/coreisbr/mul_1.asm
++++ b/mpn/x86_64/coreisbr/mul_1.asm
+@@ -159,3 +159,4 @@ IFDOS(``pop	%rdi		'')
+ IFDOS(``pop	%rsi		'')
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/mul_2.asm b/mpn/x86_64/coreisbr/mul_2.asm
+index ffee78a..991820b 100644
+--- a/mpn/x86_64/coreisbr/mul_2.asm
++++ b/mpn/x86_64/coreisbr/mul_2.asm
+@@ -161,3 +161,4 @@ L(end):	mul	v0
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/mul_basecase.asm b/mpn/x86_64/coreisbr/mul_basecase.asm
+index 35fd1cc..063664b 100644
+--- a/mpn/x86_64/coreisbr/mul_basecase.asm
++++ b/mpn/x86_64/coreisbr/mul_basecase.asm
+@@ -405,3 +405,4 @@ L(ret2):pop	%rbp
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/mullo_basecase.asm b/mpn/x86_64/coreisbr/mullo_basecase.asm
+index a41a8ac..1b75c78 100644
+--- a/mpn/x86_64/coreisbr/mullo_basecase.asm
++++ b/mpn/x86_64/coreisbr/mullo_basecase.asm
+@@ -382,3 +382,4 @@ L(n3):	mov	(vp_param), %r9
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/popcount.asm b/mpn/x86_64/coreisbr/popcount.asm
+index a5be33e..426d3a6 100644
+--- a/mpn/x86_64/coreisbr/popcount.asm
++++ b/mpn/x86_64/coreisbr/popcount.asm
+@@ -116,3 +116,4 @@ L(cj1):	add	%r11, %rax
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/redc_1.asm b/mpn/x86_64/coreisbr/redc_1.asm
+index f0dbe07..710e60e 100644
+--- a/mpn/x86_64/coreisbr/redc_1.asm
++++ b/mpn/x86_64/coreisbr/redc_1.asm
+@@ -544,3 +544,4 @@ L(n3):	mov	-32(mp), %rax
+ 	jmp	L(cj)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/rsh1aors_n.asm b/mpn/x86_64/coreisbr/rsh1aors_n.asm
+index fd2eaea..d390ff3 100644
+--- a/mpn/x86_64/coreisbr/rsh1aors_n.asm
++++ b/mpn/x86_64/coreisbr/rsh1aors_n.asm
+@@ -191,3 +191,4 @@ L(end):	shrd	$1, %rbx, %rbp
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/coreisbr/sqr_basecase.asm b/mpn/x86_64/coreisbr/sqr_basecase.asm
+index 46a3612..4d4e545 100644
+--- a/mpn/x86_64/coreisbr/sqr_basecase.asm
++++ b/mpn/x86_64/coreisbr/sqr_basecase.asm
+@@ -482,3 +482,4 @@ L(dend):add	%r8, %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/div_qr_1n_pi1.asm b/mpn/x86_64/div_qr_1n_pi1.asm
+index cb072e9..5a4f195 100644
+--- a/mpn/x86_64/div_qr_1n_pi1.asm
++++ b/mpn/x86_64/div_qr_1n_pi1.asm
+@@ -245,3 +245,4 @@ L(q_incr_loop):
+ 	lea	8(U1), U1
+ 	jmp	L(q_incr_loop)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/div_qr_2n_pi1.asm b/mpn/x86_64/div_qr_2n_pi1.asm
+index 5e59a0a..252781c 100644
+--- a/mpn/x86_64/div_qr_2n_pi1.asm
++++ b/mpn/x86_64/div_qr_2n_pi1.asm
+@@ -156,3 +156,4 @@ L(fix):	C Unlikely update. u2 >= d1
+ 	sbb	d1, u2
+ 	jmp	L(bck)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/div_qr_2u_pi1.asm b/mpn/x86_64/div_qr_2u_pi1.asm
+index 85af96f..b47209e 100644
+--- a/mpn/x86_64/div_qr_2u_pi1.asm
++++ b/mpn/x86_64/div_qr_2u_pi1.asm
+@@ -198,3 +198,4 @@ L(fix_qh):	C Unlikely update. u2 >= d1
+ 	sbb	d1, u2
+ 	jmp	L(bck_qh)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/dive_1.asm b/mpn/x86_64/dive_1.asm
+index 988bdab..b401112 100644
+--- a/mpn/x86_64/dive_1.asm
++++ b/mpn/x86_64/dive_1.asm
+@@ -156,3 +156,4 @@ L(one):	shr	R8(%rcx), %rax
+ 	ret
+ 
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/divrem_1.asm b/mpn/x86_64/divrem_1.asm
+index d4d61ad..0417756 100644
+--- a/mpn/x86_64/divrem_1.asm
++++ b/mpn/x86_64/divrem_1.asm
+@@ -312,3 +312,4 @@ L(ret):	pop	%rbx
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/divrem_2.asm b/mpn/x86_64/divrem_2.asm
+index 296c9b6..73aa740 100644
+--- a/mpn/x86_64/divrem_2.asm
++++ b/mpn/x86_64/divrem_2.asm
+@@ -188,3 +188,4 @@ L(fix):	seta	%dl
+ 	sbb	%r11, %rbx
+ 	jmp	L(bck)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastavx/copyd.asm b/mpn/x86_64/fastavx/copyd.asm
+index 56d472f..8d4f651 100644
+--- a/mpn/x86_64/fastavx/copyd.asm
++++ b/mpn/x86_64/fastavx/copyd.asm
+@@ -170,3 +170,4 @@ L(bc):	test	$4, R8(n)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastavx/copyi.asm b/mpn/x86_64/fastavx/copyi.asm
+index 7607747..3364aa9 100644
+--- a/mpn/x86_64/fastavx/copyi.asm
++++ b/mpn/x86_64/fastavx/copyi.asm
+@@ -167,3 +167,4 @@ L(bc):	test	$4, R8(n)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/com-palignr.asm b/mpn/x86_64/fastsse/com-palignr.asm
+index c7155d1..191e5d9 100644
+--- a/mpn/x86_64/fastsse/com-palignr.asm
++++ b/mpn/x86_64/fastsse/com-palignr.asm
+@@ -308,3 +308,4 @@ L(end):	test	$1, R8(n)
+ 1:	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/com.asm b/mpn/x86_64/fastsse/com.asm
+index 307fb75..5dfc8e4 100644
+--- a/mpn/x86_64/fastsse/com.asm
++++ b/mpn/x86_64/fastsse/com.asm
+@@ -165,3 +165,4 @@ L(sma):	add	$14, n
+ L(don):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/copyd-palignr.asm b/mpn/x86_64/fastsse/copyd-palignr.asm
+index fac6f8a..a69812c 100644
+--- a/mpn/x86_64/fastsse/copyd-palignr.asm
++++ b/mpn/x86_64/fastsse/copyd-palignr.asm
+@@ -252,3 +252,4 @@ L(end):	test	$1, R8(n)
+ 1:	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/copyd.asm b/mpn/x86_64/fastsse/copyd.asm
+index 5b8b8bf..f03affa 100644
+--- a/mpn/x86_64/fastsse/copyd.asm
++++ b/mpn/x86_64/fastsse/copyd.asm
+@@ -156,3 +156,4 @@ L(sma):	test	$8, R8(n)
+ L(don):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/copyi-palignr.asm b/mpn/x86_64/fastsse/copyi-palignr.asm
+index 22f13f1..e50f604 100644
+--- a/mpn/x86_64/fastsse/copyi-palignr.asm
++++ b/mpn/x86_64/fastsse/copyi-palignr.asm
+@@ -296,3 +296,4 @@ L(end):	test	$1, R8(n)
+ 1:	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/copyi.asm b/mpn/x86_64/fastsse/copyi.asm
+index b2f3b9d..a506942 100644
+--- a/mpn/x86_64/fastsse/copyi.asm
++++ b/mpn/x86_64/fastsse/copyi.asm
+@@ -175,3 +175,4 @@ dnl	jnc	1b
+ L(ret):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/lshift-movdqu2.asm b/mpn/x86_64/fastsse/lshift-movdqu2.asm
+index a05e850..df8ee6d 100644
+--- a/mpn/x86_64/fastsse/lshift-movdqu2.asm
++++ b/mpn/x86_64/fastsse/lshift-movdqu2.asm
+@@ -180,3 +180,4 @@ L(end8):movq	(ap), %xmm0
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/lshift.asm b/mpn/x86_64/fastsse/lshift.asm
+index f76972a..7d0f0fc 100644
+--- a/mpn/x86_64/fastsse/lshift.asm
++++ b/mpn/x86_64/fastsse/lshift.asm
+@@ -167,3 +167,4 @@ L(end8):movq	(ap), %xmm0
+ 	movq	%xmm0, (rp)
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/lshiftc-movdqu2.asm b/mpn/x86_64/fastsse/lshiftc-movdqu2.asm
+index 8250910..4878dad 100644
+--- a/mpn/x86_64/fastsse/lshiftc-movdqu2.asm
++++ b/mpn/x86_64/fastsse/lshiftc-movdqu2.asm
+@@ -191,3 +191,4 @@ L(end8):movq	(ap), %xmm0
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/lshiftc.asm b/mpn/x86_64/fastsse/lshiftc.asm
+index d252069..f042ec0 100644
+--- a/mpn/x86_64/fastsse/lshiftc.asm
++++ b/mpn/x86_64/fastsse/lshiftc.asm
+@@ -177,3 +177,4 @@ L(end8):movq	(ap), %xmm0
+ 	movq	%xmm0, (rp)
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/rshift-movdqu2.asm b/mpn/x86_64/fastsse/rshift-movdqu2.asm
+index 1e270b1..8149717 100644
+--- a/mpn/x86_64/fastsse/rshift-movdqu2.asm
++++ b/mpn/x86_64/fastsse/rshift-movdqu2.asm
+@@ -199,3 +199,4 @@ L(bc):	dec	R32(n)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fastsse/sec_tabselect.asm b/mpn/x86_64/fastsse/sec_tabselect.asm
+index e3df110..9975eca 100644
+--- a/mpn/x86_64/fastsse/sec_tabselect.asm
++++ b/mpn/x86_64/fastsse/sec_tabselect.asm
+@@ -190,3 +190,4 @@ L(tp1):	movdqa	%xmm8, %xmm0
+ L(b000):FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/fat/fat_entry.asm b/mpn/x86_64/fat/fat_entry.asm
+index 8f7599d..5f78553 100644
+--- a/mpn/x86_64/fat/fat_entry.asm
++++ b/mpn/x86_64/fat/fat_entry.asm
+@@ -205,3 +205,4 @@ PROLOGUE(__gmpn_cpuid)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/gcd_1.asm b/mpn/x86_64/gcd_1.asm
+index ac4aced..bf32cc0 100644
+--- a/mpn/x86_64/gcd_1.asm
++++ b/mpn/x86_64/gcd_1.asm
+@@ -163,3 +163,4 @@ L(shift_alot):
+ 	mov	%rax, %rcx
+ 	jmp	L(mid)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/invert_limb.asm b/mpn/x86_64/invert_limb.asm
+index cc79b89..829861f 100644
+--- a/mpn/x86_64/invert_limb.asm
++++ b/mpn/x86_64/invert_limb.asm
+@@ -113,3 +113,4 @@ ifdef(`DARWIN',`
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/invert_limb_table.asm b/mpn/x86_64/invert_limb_table.asm
+index 739d59e..16fe314 100644
+--- a/mpn/x86_64/invert_limb_table.asm
++++ b/mpn/x86_64/invert_limb_table.asm
+@@ -48,3 +48,4 @@ forloop(i,256,512-1,dnl
+ `	.value	eval(0x7fd00/i)
+ ')dnl
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/k10/hamdist.asm b/mpn/x86_64/k10/hamdist.asm
+index 44b67b5..83e4e86 100644
+--- a/mpn/x86_64/k10/hamdist.asm
++++ b/mpn/x86_64/k10/hamdist.asm
+@@ -101,3 +101,4 @@ L(top):	mov	(ap,n,8), %r8
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k10/popcount.asm b/mpn/x86_64/k10/popcount.asm
+index 3814aea..17e7a73 100644
+--- a/mpn/x86_64/k10/popcount.asm
++++ b/mpn/x86_64/k10/popcount.asm
+@@ -136,3 +136,4 @@ C 1 = n mod 8
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k8/aorrlsh_n.asm b/mpn/x86_64/k8/aorrlsh_n.asm
+index ff3a184..8eff29e 100644
+--- a/mpn/x86_64/k8/aorrlsh_n.asm
++++ b/mpn/x86_64/k8/aorrlsh_n.asm
+@@ -215,3 +215,4 @@ L(cj1):	mov	%r9, 8(rp,n,8)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k8/div_qr_1n_pi1.asm b/mpn/x86_64/k8/div_qr_1n_pi1.asm
+index 861402b..fef3a09 100644
+--- a/mpn/x86_64/k8/div_qr_1n_pi1.asm
++++ b/mpn/x86_64/k8/div_qr_1n_pi1.asm
+@@ -247,3 +247,4 @@ L(q_incr_loop):
+ 	lea	8(U1), U1
+ 	jmp	L(q_incr_loop)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k8/mul_basecase.asm b/mpn/x86_64/k8/mul_basecase.asm
+index ca2efb9..61b6e0e 100644
+--- a/mpn/x86_64/k8/mul_basecase.asm
++++ b/mpn/x86_64/k8/mul_basecase.asm
+@@ -467,3 +467,4 @@ L(ret):	pop	%r15
+ 	ret
+ 
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k8/mullo_basecase.asm b/mpn/x86_64/k8/mullo_basecase.asm
+index fa00f42..b1f5b20 100644
+--- a/mpn/x86_64/k8/mullo_basecase.asm
++++ b/mpn/x86_64/k8/mullo_basecase.asm
+@@ -99,12 +99,14 @@ dnl	JMPENT(	L(2m4), L(tab))			C 10
+ dnl	JMPENT(	L(3m4), L(tab))			C 11
+ 	TEXT
+ 
+-L(1):	imul	%r8, %rax
++L(1):	CFPROT_ENDBR
++	imul	%r8, %rax
+ 	mov	%rax, (rp)
+ 	FUNC_EXIT()
+ 	ret
+ 
+-L(2):	mov	8(vp_param), %r11
++L(2):	CFPROT_ENDBR
++	mov	8(vp_param), %r11
+ 	imul	%rax, %r11		C u0 x v1
+ 	mul	%r8			C u0 x v0
+ 	mov	%rax, (rp)
+@@ -115,7 +117,8 @@ L(2):	mov	8(vp_param), %r11
+ 	FUNC_EXIT()
+ 	ret
+ 
+-L(3):	mov	8(vp_param), %r9	C v1
++L(3):	CFPROT_ENDBR
++	mov	8(vp_param), %r9	C v1
+ 	mov	16(vp_param), %r11
+ 	mul	%r8			C u0 x v0 -> <r1,r0>
+ 	mov	%rax, (rp)		C r0
+@@ -144,7 +147,8 @@ L(0m4):
+ L(1m4):
+ L(2m4):
+ L(3m4):
+-L(gen):	push	%rbx
++L(gen):	CFPROT_ENDBR
++	push	%rbx
+ 	push	%rbp
+ 	push	%r13
+ 	push	%r14
+@@ -434,3 +438,4 @@ L(ret):	pop	%r15
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k8/mulmid_basecase.asm b/mpn/x86_64/k8/mulmid_basecase.asm
+index 86f1414..0ace1ba 100644
+--- a/mpn/x86_64/k8/mulmid_basecase.asm
++++ b/mpn/x86_64/k8/mulmid_basecase.asm
+@@ -557,3 +557,4 @@ L(ret):	pop	%r15
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k8/redc_1.asm b/mpn/x86_64/k8/redc_1.asm
+index 9327b21..b00103f 100644
+--- a/mpn/x86_64/k8/redc_1.asm
++++ b/mpn/x86_64/k8/redc_1.asm
+@@ -124,8 +124,9 @@ L(tab):	JMPENT(	L(0), L(tab))
+ 	JMPENT(	L(3m4), L(tab))
+ 	TEXT
+ 
++L(1):	CFPROT_ENDBR
+ 	ALIGN(16)
+-L(1):	mov	(mp_param), %rax
++	mov	(mp_param), %rax
+ 	mul	q0
+ 	add	8(up), %rax
+ 	adc	16(up), %rdx
+@@ -135,8 +136,9 @@ L(1):	mov	(mp_param), %rax
+ 	jmp	L(ret)
+ 
+ 
++L(2):	CFPROT_ENDBR
+ 	ALIGN(16)
+-L(2):	mov	(mp_param), %rax
++  mov	(mp_param), %rax
+ 	mul	q0
+ 	xor	R32(%r14), R32(%r14)
+ 	mov	%rax, %r10
+@@ -171,7 +173,8 @@ L(2):	mov	(mp_param), %rax
+ 	jmp	L(ret)
+ 
+ 
+-L(3):	mov	(mp_param), %rax
++L(3):	CFPROT_ENDBR
++	mov	(mp_param), %rax
+ 	mul	q0
+ 	mov	%rax, %rbx
+ 	mov	%rdx, %r10
+@@ -247,8 +250,8 @@ L(3):	mov	(mp_param), %rax
+ 	jmp	L(ret)
+ 
+ 
++L(2m4):	CFPROT_ENDBR
+ 	ALIGN(16)
+-L(2m4):
+ L(lo2):	mov	(mp,nneg,8), %rax
+ 	mul	q0
+ 	xor	R32(%r14), R32(%r14)
+@@ -323,8 +326,8 @@ L(le2):	add	%r10, (up)
+ 	jmp	L(addx)
+ 
+ 
++L(1m4):	CFPROT_ENDBR
+ 	ALIGN(16)
+-L(1m4):
+ L(lo1):	mov	(mp,nneg,8), %rax
+ 	xor	%r9, %r9
+ 	xor	R32(%rbx), R32(%rbx)
+@@ -396,9 +399,9 @@ L(le1):	add	%r10, (up)
+ 	jmp	L(addx)
+ 
+ 
+-	ALIGN(16)
+ L(0):
+-L(0m4):
++L(0m4):	CFPROT_ENDBR
++	ALIGN(16)
+ L(lo0):	mov	(mp,nneg,8), %rax
+ 	mov	nneg, i
+ 	mul	q0
+@@ -462,8 +465,8 @@ L(le0):	add	%r10, (up)
+ 	jmp	L(addy)
+ 
+ 
++L(3m4):	CFPROT_ENDBR
+ 	ALIGN(16)
+-L(3m4):
+ L(lo3):	mov	(mp,nneg,8), %rax
+ 	mul	q0
+ 	mov	%rax, %rbx
+@@ -589,3 +592,4 @@ L(ret):	pop	%r15
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/k8/sqr_basecase.asm b/mpn/x86_64/k8/sqr_basecase.asm
+index 60cf945..e6a545d 100644
+--- a/mpn/x86_64/k8/sqr_basecase.asm
++++ b/mpn/x86_64/k8/sqr_basecase.asm
+@@ -131,7 +131,8 @@ L(tab):	JMPENT(	L(4), L(tab))
+ 	JMPENT(	L(3m4), L(tab))
+ 	TEXT
+ 
+-L(1):	mov	(up), %rax
++L(1):	CFPROT_ENDBR
++	mov	(up), %rax
+ 	mul	%rax
+ 	add	$40, %rsp
+ 	mov	%rax, (rp)
+@@ -139,7 +140,8 @@ L(1):	mov	(up), %rax
+ 	FUNC_EXIT()
+ 	ret
+ 
+-L(2):	mov	(up), %rax
++L(2):	CFPROT_ENDBR
++	mov	(up), %rax
+ 	mov	%rax, %r8
+ 	mul	%rax
+ 	mov	8(up), %r11
+@@ -165,7 +167,8 @@ L(2):	mov	(up), %rax
+ 	FUNC_EXIT()
+ 	ret
+ 
+-L(3):	mov	(up), %rax
++L(3):	CFPROT_ENDBR
++	mov	(up), %rax
+ 	mov	%rax, %r10
+ 	mul	%rax
+ 	mov	8(up), %r11
+@@ -210,7 +213,8 @@ L(3):	mov	(up), %rax
+ 	FUNC_EXIT()
+ 	ret
+ 
+-L(4):	mov	(up), %rax
++L(4):	CFPROT_ENDBR
++	mov	(up), %rax
+ 	mov	%rax, %r11
+ 	mul	%rax
+ 	mov	8(up), %rbx
+@@ -281,7 +285,7 @@ L(4):	mov	(up), %rax
+ 	ret
+ 
+ 
+-L(0m4):
++L(0m4):	CFPROT_ENDBR
+ 	lea	-16(rp,n,8), tp		C point tp in middle of result operand
+ 	mov	(up), v0
+ 	mov	8(up), %rax
+@@ -339,7 +343,7 @@ L(L3):	xor	R32(w1), R32(w1)
+ 	jmp	L(dowhile)
+ 
+ 
+-L(1m4):
++L(1m4):	CFPROT_ENDBR
+ 	lea	8(rp,n,8), tp		C point tp in middle of result operand
+ 	mov	(up), v0		C u0
+ 	mov	8(up), %rax		C u1
+@@ -417,7 +421,7 @@ L(m2x):	mov	(up,j,8), %rax
+ 	jmp	L(dowhile_end)
+ 
+ 
+-L(2m4):
++L(2m4):	CFPROT_ENDBR
+ 	lea	-16(rp,n,8), tp		C point tp in middle of result operand
+ 	mov	(up), v0
+ 	mov	8(up), %rax
+@@ -474,7 +478,7 @@ L(L1):	xor	R32(w0), R32(w0)
+ 	jmp	L(dowhile_mid)
+ 
+ 
+-L(3m4):
++L(3m4):	CFPROT_ENDBR
+ 	lea	8(rp,n,8), tp		C point tp in middle of result operand
+ 	mov	(up), v0		C u0
+ 	mov	8(up), %rax		C u1
+@@ -805,3 +809,4 @@ L(d1):	mov	%r11, 24(rp,j,8)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/logops_n.asm b/mpn/x86_64/logops_n.asm
+index b277f58..b2c640c 100644
+--- a/mpn/x86_64/logops_n.asm
++++ b/mpn/x86_64/logops_n.asm
+@@ -134,6 +134,7 @@ L(e10):	movq	24(vp,n,8), %r9
+ L(ret):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+ ')
+ 
+ ifdef(`VARIANT_2',`
+@@ -187,6 +188,7 @@ L(e10):	movq	24(vp,n,8), %r9
+ L(ret):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+ ')
+ 
+ ifdef(`VARIANT_3',`
+@@ -241,4 +243,5 @@ L(e10):	movq	24(vp,n,8), %r9
+ L(ret):	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+ ')
+diff --git a/mpn/x86_64/lshift.asm b/mpn/x86_64/lshift.asm
+index f368944..990b3b8 100644
+--- a/mpn/x86_64/lshift.asm
++++ b/mpn/x86_64/lshift.asm
+@@ -245,3 +245,4 @@ L(ast):	mov	(up), %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/lshiftc.asm b/mpn/x86_64/lshiftc.asm
+index c4ba04a..4fd4430 100644
+--- a/mpn/x86_64/lshiftc.asm
++++ b/mpn/x86_64/lshiftc.asm
+@@ -180,3 +180,4 @@ L(ast):	mov	(up), %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/lshsub_n.asm b/mpn/x86_64/lshsub_n.asm
+index 4d428c0..d263565 100644
+--- a/mpn/x86_64/lshsub_n.asm
++++ b/mpn/x86_64/lshsub_n.asm
+@@ -170,3 +170,4 @@ L(end):
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/missing.asm b/mpn/x86_64/missing.asm
+index 9b65c89..7914b82 100644
+--- a/mpn/x86_64/missing.asm
++++ b/mpn/x86_64/missing.asm
+@@ -128,3 +128,4 @@ PROLOGUE(__gmp_adcx)
+ 	ret
+ EPILOGUE()
+ PROTECT(__gmp_adcx)
++CF_PROT
+diff --git a/mpn/x86_64/mod_1_1.asm b/mpn/x86_64/mod_1_1.asm
+index 09b5dd1..287f61d 100644
+--- a/mpn/x86_64/mod_1_1.asm
++++ b/mpn/x86_64/mod_1_1.asm
+@@ -234,3 +234,4 @@ L(z):
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/mod_1_2.asm b/mpn/x86_64/mod_1_2.asm
+index 09d856e..1cd6dd1 100644
+--- a/mpn/x86_64/mod_1_2.asm
++++ b/mpn/x86_64/mod_1_2.asm
+@@ -237,3 +237,4 @@ ifdef(`SHLD_SLOW',`
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/mod_1_4.asm b/mpn/x86_64/mod_1_4.asm
+index ae34617..fb685ef 100644
+--- a/mpn/x86_64/mod_1_4.asm
++++ b/mpn/x86_64/mod_1_4.asm
+@@ -268,3 +268,4 @@ ifdef(`SHLD_SLOW',`
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/mod_34lsub1.asm b/mpn/x86_64/mod_34lsub1.asm
+index 62bdcfa..2cf5751 100644
+--- a/mpn/x86_64/mod_34lsub1.asm
++++ b/mpn/x86_64/mod_34lsub1.asm
+@@ -135,46 +135,55 @@ L(tab):	JMPENT(	L(0), L(tab))
+ 	JMPENT(	L(8), L(tab))
+ 	TEXT
+ 
+-L(6):	add	(ap), %rax
++L(6):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	8(ap), %rcx
+ 	adc	16(ap), %rdx
+ 	adc	$0, %r9
+ 	add	$24, ap
+-L(3):	add	(ap), %rax
++L(3):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	8(ap), %rcx
+ 	adc	16(ap), %rdx
+ 	jmp	L(cj1)
+ 
+-L(7):	add	(ap), %rax
++L(7):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	8(ap), %rcx
+ 	adc	16(ap), %rdx
+ 	adc	$0, %r9
+ 	add	$24, ap
+-L(4):	add	(ap), %rax
++L(4):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	8(ap), %rcx
+ 	adc	16(ap), %rdx
+ 	adc	$0, %r9
+ 	add	$24, ap
+-L(1):	add	(ap), %rax
++L(1):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	$0, %rcx
+ 	jmp	L(cj2)
+ 
+-L(8):	add	(ap), %rax
++L(8):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	8(ap), %rcx
+ 	adc	16(ap), %rdx
+ 	adc	$0, %r9
+ 	add	$24, ap
+-L(5):	add	(ap), %rax
++L(5):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	8(ap), %rcx
+ 	adc	16(ap), %rdx
+ 	adc	$0, %r9
+ 	add	$24, ap
+-L(2):	add	(ap), %rax
++L(2):	CFPROT_ENDBR
++	add	(ap), %rax
+ 	adc	8(ap), %rcx
+ 
+ L(cj2):	adc	$0, %rdx
+ L(cj1):	adc	$0, %r9
+-L(0):	add	%r9, %rax
++L(0):	CFPROT_ENDBR
++	add	%r9, %rax
+ 	adc	$0, %rcx
+ 	adc	$0, %rdx
+ 	adc	$0, %rax
+@@ -203,3 +212,4 @@ L(0):	add	%r9, %rax
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/mode1o.asm b/mpn/x86_64/mode1o.asm
+index 2cd2b08..c10a5a6 100644
+--- a/mpn/x86_64/mode1o.asm
++++ b/mpn/x86_64/mode1o.asm
+@@ -169,3 +169,4 @@ L(one):
+ 
+ EPILOGUE(mpn_modexact_1c_odd)
+ EPILOGUE(mpn_modexact_1_odd)
++CF_PROT
+diff --git a/mpn/x86_64/mul_1.asm b/mpn/x86_64/mul_1.asm
+index b032afc..6ea9a4a 100644
+--- a/mpn/x86_64/mul_1.asm
++++ b/mpn/x86_64/mul_1.asm
+@@ -181,3 +181,4 @@ IFDOS(``pop	%rdi		'')
+ IFDOS(``pop	%rsi		'')
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/mul_2.asm b/mpn/x86_64/mul_2.asm
+index f408c52..6b73737 100644
+--- a/mpn/x86_64/mul_2.asm
++++ b/mpn/x86_64/mul_2.asm
+@@ -190,3 +190,4 @@ L(m22):	mul	v1
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/mulx/aorsmul_1.asm b/mpn/x86_64/mulx/aorsmul_1.asm
+index 285c073..942cf6a 100644
+--- a/mpn/x86_64/mulx/aorsmul_1.asm
++++ b/mpn/x86_64/mulx/aorsmul_1.asm
+@@ -159,3 +159,4 @@ L(wd1):	ADCSBB	%rbx, 24(rp)
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/mulx/mul_1.asm b/mpn/x86_64/mulx/mul_1.asm
+index 34a044d..4a0e6ef 100644
+--- a/mpn/x86_64/mulx/mul_1.asm
++++ b/mpn/x86_64/mulx/mul_1.asm
+@@ -152,3 +152,4 @@ L(wd1):	adc	%r12, %rbx
+ 	ret
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/nano/dive_1.asm b/mpn/x86_64/nano/dive_1.asm
+index e9a0763..d57c444 100644
+--- a/mpn/x86_64/nano/dive_1.asm
++++ b/mpn/x86_64/nano/dive_1.asm
+@@ -164,3 +164,4 @@ L(one):	shr	R8(%rcx), %rax
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/pentium4/aors_n.asm b/mpn/x86_64/pentium4/aors_n.asm
+index 8e6ee1b..d3daf6f 100644
+--- a/mpn/x86_64/pentium4/aors_n.asm
++++ b/mpn/x86_64/pentium4/aors_n.asm
+@@ -194,3 +194,4 @@ L(ret):	mov	R32(%rbx), R32(%rax)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/pentium4/aorslshC_n.asm b/mpn/x86_64/pentium4/aorslshC_n.asm
+index d03c6a3..a4cd689 100644
+--- a/mpn/x86_64/pentium4/aorslshC_n.asm
++++ b/mpn/x86_64/pentium4/aorslshC_n.asm
+@@ -201,3 +201,4 @@ L(c3):	mov	$1, R8(%rax)
+ 	jmp	L(rc3)
+ EPILOGUE()
+ ASM_END()
++CF_PROT
+diff --git a/mpn/x86_64/pentium4/lshift.asm b/mpn/x86_64/pentium4/lshift.asm
+index d3b5213..baa4820 100644
+--- a/mpn/x86_64/pentium4/lshift.asm
++++ b/mpn/x86_64/pentium4/lshift.asm
+@@ -164,3 +164,4 @@ L(ast):	movq	(up), %mm2
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/pentium4/lshiftc.asm b/mpn/x86_64/pentium4/lshiftc.asm
+index fc64676..e7ed07f 100644
+--- a/mpn/x86_64/pentium4/lshiftc.asm
++++ b/mpn/x86_64/pentium4/lshiftc.asm
+@@ -177,3 +177,4 @@ L(ast):	movq	(up), %mm2
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/pentium4/mod_34lsub1.asm b/mpn/x86_64/pentium4/mod_34lsub1.asm
+index f34b3f0..adb4ae6 100644
+--- a/mpn/x86_64/pentium4/mod_34lsub1.asm
++++ b/mpn/x86_64/pentium4/mod_34lsub1.asm
+@@ -165,3 +165,4 @@ L(combine):
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/pentium4/rsh1aors_n.asm b/mpn/x86_64/pentium4/rsh1aors_n.asm
+index 5528ce4..64a6322 100644
+--- a/mpn/x86_64/pentium4/rsh1aors_n.asm
++++ b/mpn/x86_64/pentium4/rsh1aors_n.asm
+@@ -332,3 +332,4 @@ L(cj1):	or	%r14, %rbx
+ L(c3):	mov	$1, R8(%rax)
+ 	jmp	L(rc3)
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/pentium4/rshift.asm b/mpn/x86_64/pentium4/rshift.asm
+index b7c1ee2..758ca64 100644
+--- a/mpn/x86_64/pentium4/rshift.asm
++++ b/mpn/x86_64/pentium4/rshift.asm
+@@ -167,3 +167,4 @@ L(ast):	movq	(up), %mm2
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/popham.asm b/mpn/x86_64/popham.asm
+index 9005f81..a52ea0f 100644
+--- a/mpn/x86_64/popham.asm
++++ b/mpn/x86_64/popham.asm
+@@ -175,3 +175,4 @@ L(end):
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/rsh1aors_n.asm b/mpn/x86_64/rsh1aors_n.asm
+index a3e9cc5..d28cc32 100644
+--- a/mpn/x86_64/rsh1aors_n.asm
++++ b/mpn/x86_64/rsh1aors_n.asm
+@@ -187,3 +187,4 @@ L(end):	mov	%rbx, (rp)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/rshift.asm b/mpn/x86_64/rshift.asm
+index 3f344f1..2c45172 100644
+--- a/mpn/x86_64/rshift.asm
++++ b/mpn/x86_64/rshift.asm
+@@ -174,3 +174,4 @@ L(ast):	mov	(up), %r10
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/sec_tabselect.asm b/mpn/x86_64/sec_tabselect.asm
+index e8aed26..2198b4b 100644
+--- a/mpn/x86_64/sec_tabselect.asm
++++ b/mpn/x86_64/sec_tabselect.asm
+@@ -174,3 +174,4 @@ L(b00):	pop	%r15
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/sqr_diag_addlsh1.asm b/mpn/x86_64/sqr_diag_addlsh1.asm
+index 4ad034c..6db16f6 100644
+--- a/mpn/x86_64/sqr_diag_addlsh1.asm
++++ b/mpn/x86_64/sqr_diag_addlsh1.asm
+@@ -114,3 +114,4 @@ L(end):	add	%r10, %r8
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/sublsh1_n.asm b/mpn/x86_64/sublsh1_n.asm
+index c6d829f..2f0fe01 100644
+--- a/mpn/x86_64/sublsh1_n.asm
++++ b/mpn/x86_64/sublsh1_n.asm
+@@ -158,3 +158,4 @@ L(end):	add	R32(%rbp), R32(%rax)
+ 	FUNC_EXIT()
+ 	ret
+ EPILOGUE()
++CF_PROT
+diff --git a/mpn/x86_64/x86_64-defs.m4 b/mpn/x86_64/x86_64-defs.m4
+index a626419..80f549e 100644
+--- a/mpn/x86_64/x86_64-defs.m4
++++ b/mpn/x86_64/x86_64-defs.m4
+@@ -93,8 +93,38 @@ m4_assert_numargs(1)
+ `	GLOBL	$1
+ 	TYPE($1,`function')
+ $1:
++	CFPROT_ENDBR
+ ')
+ 
++dnl Generates the endbr64 instructions
++dnl Using macro, so it can be easily extended to use some arch specific conditional defines
++define(`CFPROT_ENDBR',
++``
++	endbr64''
++)
++
++dnl Append the .gnu-property to the end of files
++dnl This is needed for a -fcf-protection 
++dnl Again, using macro for easy arch specific defines
++dnl
++define(`CF_PROT',``
++	.section	.note.gnu.property,"a"
++	.align 8
++	.long	 1f - 0f
++	.long	 4f - 1f
++	.long	 5
++0:
++	.string	 "GNU"
++1:
++	.align 8
++	.long	 0xc0000002
++	.long	 3f - 2f
++2:
++	.long	 0x3
++3:
++ 	.align 8
++4:
++'')
+ 
+ dnl  Usage: ASSERT([cond][,instructions])
+ dnl
