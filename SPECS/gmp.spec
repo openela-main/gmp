@@ -6,7 +6,7 @@
 Summary: A GNU arbitrary precision library
 Name: gmp
 Version: 6.1.2
-Release: 10%{?dist}
+Release: 11%{?dist}
 Epoch: 1
 URL: http://gmplib.org/
 Source0: ftp://ftp.gmplib.org/pub/gmp-%{version}/gmp-%{version}.tar.bz2
@@ -15,6 +15,7 @@ Source2: gmp.h
 Source3: gmp-mparam.h
 Patch2: gmp-6.0.0-debuginfo.patch
 Patch3: gmp-fcf-protection.patch
+Patch4: cve-2021-43618.patch
 License: LGPLv3+ or GPLv2+
 Group: System Environment/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -200,6 +201,10 @@ exit 0
 %{_libdir}/libgmpxx.a
 
 %changelog
+* Mon Jan 29 2024 Jakub Martisko <jamartis@redhat.com> - 1:6.1.2-11
+- Fix: CVE-2021-43618
+Resolves: RHEL-23055
+
 * Fri Jun 14 2019 Jakub Martisko <jamartis@redhat.com> - 1:6.1.2-10
 - Add gating.yaml
 Related: #1681026
