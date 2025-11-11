@@ -6,7 +6,7 @@
 Summary: GNU arbitrary precision library
 Name: gmp
 Version: 6.2.1
-Release: 10%{?dist}
+Release: 12%{?dist}
 Epoch: 1
 URL: https://gmplib.org/
 Source0: https://gmplib.org/download/gmp/gmp-%{version}.tar.xz
@@ -14,6 +14,10 @@ Source2: gmp.h
 Source3: gmp-mparam.h
 Patch2: gmp-6.0.0-debuginfo.patch
 Patch3: gmp-intel-cet.patch
+Patch4: ibm_z13_simd_part1.patch
+Patch5: ibm_z13_simd_part2.patch
+Patch6: ibm_z13_simd_part3.patch
+Patch7: ibm_z13_simd_part4.patch
 
 # * Main sources are dual licensed under LGPL-3.0-or-later and GPL-2.0-or-later
 #   Either only one may be active or both simultaneously.
@@ -84,7 +88,7 @@ in applications.
 
 # switch the defaults to new cpus on s390x
 %ifarch s390x
-( cd mpn/s390_64; ln -s z10 s390x )
+( cd mpn/s390_64; ln -s z13 s390x )
 %endif
 
 %build
@@ -187,6 +191,14 @@ export LD_LIBRARY_PATH=`pwd`/.libs
 %{_libdir}/libgmpxx.a
 
 %changelog
+* Wed Jun 11 2025 Jakub Martisko <jamartis@redhat.com> - 1:6.2.1-12
+- Release bump due to internal issue with the build system (missing debug symbols)
+  Related: RHEL-24118
+
+* Thu May 29 2025 Jakub Martisko <jamartis@redhat.com> - 1:6.2.1-11
+- Port the ibm z13 optimization patches
+  Resolves: RHEL-24118
+
 * Tue Oct 29 2024 Troy Dawson <tdawson@redhat.com> - 1:6.2.1-10
 - Bump release for October 2024 mass rebuild:
   Resolves: RHEL-64018
